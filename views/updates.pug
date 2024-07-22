@@ -1,0 +1,23 @@
+//- update-custom-object.pug
+
+doctype html
+html
+  head
+    title Update Custom Object
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    h1 Pc Informations
+    form(action='/update-cobj', method='post')
+      label(for='pctype') Pc Type:
+      input(type='text', name='pctype', required)
+      br
+      label(for='pcweight') Pc Weight:
+      input(type='text', name='pcweight', required)
+      br
+      label(for='pcprice') Pc Price:
+      input(type='number', name='pcprice', required)
+      br
+      button(type='submit') Add pc
+    p
+      a(href='/') Return to the homepage

@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title= title
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    h1= title
+    p
+      a(href='/update-cobj') Add a new PC record
+    table
+      thead
+        tr
+          th Type
+          th Weight
+          th Price
+      tbody
+        each record in records
+          tr
+            td= record.properties.pctype || 'No Data'
+            td= record.properties.pcweight || 'No Data'
+            td= record.properties.pcprice || 'No Data'
