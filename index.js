@@ -1,6 +1,8 @@
 
 require('dotenv').config();
 const PRIVATE_APP_ACCESS = process.env.PRIVATE_APP_ACCESS;
+const CRM_RECORDS_ENDPOINT = process.env.CRM_RECORDS_ENDPOINT;
+
 
 
 const express = require('express');
@@ -12,9 +14,8 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Custom Object Endpoint
-const CRM_RECORDS_ENDPOINT = 'https://api.hubapi.com/crm/v3/objects/pcs?properties=pctype,pcweight,pcprice'
-;
+
+
 
 // Route for rendering the updates form
 app.get('/update-cobj', (req, res) => {
